@@ -1,7 +1,10 @@
 #include "becreglabil.h"
 #include <iostream>
 
-unsigned short BecReglabil::putereMinima = 0;
+BecReglabil::BecReglabil()
+{
+
+}
 
 void BecReglabil::SetPutereCurenta(unsigned short volt){
     putereCurenta = volt;
@@ -17,29 +20,34 @@ void BecReglabil::Aprinde() {
 }
 
 void BecReglabil::Stinge() {
-    putereCurenta = putereMinima;
+    putereCurenta = 0;
     aprins = false;
 }
 
-void BecReglabil::MaresteLumina(unsigned short volt) {
+unsigned short BecReglabil::MaresteLumina(unsigned short volt) {
     putereCurenta += volt;
     if(putereCurenta > putereMaxima) {
         putereCurenta = putereMaxima;
     }
-    aprins = true;
+    return (aprins = true);
 }
 
-void BecReglabil::ReduceLumina(unsigned short volt) {
+unsigned short BecReglabil::ReduceLumina(unsigned short volt) {
     putereCurenta -= volt;
-    if(putereCurenta < putereMinima)
-        putereCurenta = putereMinima;
-    else if(putereCurenta == putereMinima)
-        aprins = false;
+    if(putereCurenta < 0) {
+        putereCurenta = 0;
     }
+    return aprins = false;
+}
 
 void BecReglabil::StareBec() {
     if(aprins == true)
         std::cout << "Becul este aprins\n";
-    else
+    else if (aprins == false)
         std::cout << "Becul este stins\n";
+}
+
+BecReglabil::~BecReglabil()
+{
+
 }

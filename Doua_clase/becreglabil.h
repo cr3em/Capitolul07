@@ -5,20 +5,23 @@
 class BecReglabil
 {
 public:
+    BecReglabil();
+
     void SetPutereCurenta(unsigned short);
     void SetPutereMaxima(unsigned short);
     unsigned short GetPutereCurenta() {return putereCurenta;}
     unsigned short GetPutereMaxima() {return putereMaxima;}
     void Aprinde();
     void Stinge();
-    void MaresteLumina(unsigned short);
-    void ReduceLumina(unsigned short);
+    unsigned short MaresteLumina(unsigned short);
+    unsigned short ReduceLumina(unsigned short);
     void StareBec();
+
+    ~BecReglabil();
 
 private:
     unsigned short putereCurenta;
     unsigned short putereMaxima;
-    static unsigned short putereMinima;
     bool aprins;
 };
 
