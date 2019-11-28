@@ -33,8 +33,8 @@ void BecReglabil::ReduceLumina(short volt) {
     putereCurenta -= volt;
     if(putereCurenta < putereMinima)
         putereCurenta = putereMinima;
-        if(putereCurenta == 0)
-            aprins = false;
+            if(putereCurenta == putereMinima)
+                    aprins = false;
 
 }
 
