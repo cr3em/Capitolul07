@@ -11,8 +11,8 @@ public:
     unsigned short GetPutereMaxima() {return putereMaxima;}
     void Aprinde();
     void Stinge();
-    void MaresteLumina(unsigned short);
-    void ReduceLumina(unsigned short);
+    void MaresteLumina(short);
+    void ReduceLumina(short);
     void StareBec();
 
 private:

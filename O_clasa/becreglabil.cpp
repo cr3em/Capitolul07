@@ -21,7 +21,7 @@ void BecReglabil::Stinge() {
     aprins = false;
 }
 
-void BecReglabil::MaresteLumina(unsigned short volt) {
+void BecReglabil::MaresteLumina(short volt) {
     putereCurenta += volt;
     if(putereCurenta > putereMaxima) {
         putereCurenta = putereMaxima;
@@ -29,13 +29,14 @@ void BecReglabil::MaresteLumina(unsigned short volt) {
     aprins = true;
 }
 
-void BecReglabil::ReduceLumina(unsigned short volt) {
+void BecReglabil::ReduceLumina(short volt) {
     putereCurenta -= volt;
     if(putereCurenta < putereMinima)
         putereCurenta = putereMinima;
-    else if(putereCurenta == putereMinima)
-        aprins = false;
-    }
+        if(putereCurenta == 0)
+            aprins = false;
+
+}
 
 void BecReglabil::StareBec() {
     if(aprins == true)
