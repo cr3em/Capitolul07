@@ -30,12 +30,12 @@ void BecReglabil::MaresteLumina(short volt) {
 }
 
 void BecReglabil::ReduceLumina(short volt) {
-    putereCurenta -= volt;
-    if(putereCurenta < putereMinima)
+    if(putereCurenta <= volt) {
         putereCurenta = putereMinima;
-            if(putereCurenta == putereMinima)
-                    aprins = false;
-
+        aprins = false;
+    }
+    else
+        putereCurenta -= volt;
 }
 
 void BecReglabil::StareBec() {
