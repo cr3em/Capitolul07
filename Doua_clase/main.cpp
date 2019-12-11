@@ -31,7 +31,7 @@ int main()
     cout << "Candelabrul este " << (cand3.StareCandelabru() ? "aprins" : "stins") << endl;
     cout << "Candelabrul este " << (cand5.StareCandelabru() ? "aprins" : "stins") << endl << endl;
 
-    cand3.ReduceLumina(30);
+    cand3.ReduceLumina(31);
     cand5.ReduceLumina(30);
     cout << "Candelabrul este " << (cand3.StareCandelabru() ? "aprins" : "stins") << endl;
     cout << "Candelabrul este " << (cand5.StareCandelabru() ? "aprins" : "stins") << endl << endl;
